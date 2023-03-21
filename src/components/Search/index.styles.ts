@@ -1,4 +1,4 @@
-export const sxStyles = (props) => {
+export const sxStyles = (props: any) => {
   return {
     placeHolderStyle: {
       "& input::placeholder": {
