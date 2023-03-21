@@ -17,7 +17,7 @@ const Layout = ({ children }: Props) => {
         sx={{
           backgroundColor: "#EFF2F9",
           display: "flex",
-          height: "calc(100vh - 70px)",
+          height: "calc(100vh - 80px)",
         }}
       >
         <Sidebar />

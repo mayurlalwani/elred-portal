@@ -20,7 +20,7 @@ const StyledInput = styled(TextField)(() => ({
   },
   "& .MuiOutlinedInput-root": {
     borderRadius: 0,
-    width: 500,
+    width: 600,
     backgroundColor: "#eff2f9",
     height: 40,
 

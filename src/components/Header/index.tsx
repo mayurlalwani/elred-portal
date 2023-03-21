@@ -1,28 +1,20 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import "./index.scss";
-import LogoImg from "../../assets/logo.png";
 import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
-import Button, { ButtonProps } from "@mui/material/Button";
-import { styled } from "@mui/material/styles";
 import {
   Avatar,
   Box,
   Divider,
-  IconButton,
   Menu,
   MenuItem,
   Typography,
 } from "@mui/material";
-import Search from "../Search";
 
-const ColorButton = styled(Button)<ButtonProps>(({ theme }) => ({
-  color: "#ffffff",
-  backgroundColor: "black",
-  textTransform: "none",
-  marginRight: 50,
-  width: "200px",
-}));
+import React from "react";
+import { Link } from "react-router-dom";
+import LogoImg from "../../assets/logo.png";
+import PrimaryButton from "../Button";
+import Search from "../Search";
+import "./index.scss";
+import DownIcon from "../../assets/angle-down-solid.svg";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
@@ -41,7 +33,7 @@ const Header = () => {
         <div className="logo-search">
           <div className="logo">
             <Link to="/">
-              <img src={LogoImg} width="90px" height="70px" alt="logo" />
+              <img src={LogoImg} width="50px" height="50px" alt="logo" />
             </Link>
           </div>
 
@@ -50,15 +42,16 @@ const Header = () => {
           </div>
         </div>
         <div className="right-section">
-          <ColorButton
-            variant="contained"
+          <PrimaryButton
             startIcon={<ShoppingCartOutlinedIcon />}
-          >
-            Checkout (200)
-          </ColorButton>
+            title="Checkout(200)"
+            width="210px"
+            onClick={() => {}}
+          />
+
           <Box
             className="avatar-profile"
-            sx={{ ml: 2, mr: 2, backgroundColor: "white" }}
+            sx={{ ml: 2, mr: 2, backgroundColor: "white", cursor: "pointer" }}
           >
             <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
 
@@ -67,10 +60,11 @@ const Header = () => {
               aria-controls={open ? "account-menu" : undefined}
               aria-haspopup="true"
               aria-expanded={open ? "true" : undefined}
-              sx={{ ml: 2 }}
+              sx={{ ml: 2, mr: 2, fontWeight: 500, fontSize: "16px" }}
             >
               User Admin
             </Typography>
+            <img height="10px" width="10px" src={DownIcon} />
           </Box>
         </div>
 
