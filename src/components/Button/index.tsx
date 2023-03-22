@@ -13,7 +13,7 @@ interface IButtonProps {
   borderRadius?: string;
   onClick: any;
   title: string;
-  startIcon: any;
+  startIcon?: any;
 }
 
 const PrimaryButton = (props: IButtonProps) => {
@@ -25,6 +25,7 @@ const PrimaryButton = (props: IButtonProps) => {
     fontSize: props.fontSize,
     backgroundColor: props.backgroundColor,
     color: props.color,
+    borderRadius: props.borderRadius,
   };
   const styles = sxStyles(sxStylesprops);
   return (

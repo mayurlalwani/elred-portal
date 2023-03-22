@@ -1,11 +1,11 @@
 export const sxStyles = (props: any) => {
   return {
     buttonStyle: {
-      background: "black",
-      color: "white",
+      backgroundColor: props.backgroundColor ? props.backgroundColor : "black",
+      color: props.color ? props.color : "#fff",
       width: props.width && props.width,
       height: (props.height && props.height) || 40,
-      borderRadius: "5px",
+      borderRadius: props.borderRadius ? props.borderRadius : "5px",
       fontSize: 14,
       display: "inline-flex",
       transition: "all 0.25s ease",

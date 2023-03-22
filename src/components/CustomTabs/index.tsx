@@ -3,6 +3,9 @@ import Tabs from "@mui/material/Tabs";
 import Tab from "@mui/material/Tab";
 import Typography from "@mui/material/Typography";
 import Box from "@mui/material/Box";
+import Card from "../Card";
+import ContactPageIcon from "@mui/icons-material/ContactPage";
+import { Grid } from "@mui/material";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -68,7 +71,45 @@ export default function CustomTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        Item One
+        <Box sx={{ border: "solid" }}>
+          <Grid container rowGap={2}>
+            <Grid container spacing={2} rowGap={2}>
+              <Grid item xs={4}>
+                <Card
+                  title="Contact"
+                  icon={ContactPageIcon}
+                  showContactsInfo={true}
+                >
+                  contents
+                </Card>
+              </Grid>
+
+              <Grid item xs={4}>
+                <Card title="Address" icon={ContactPageIcon}>
+                  contents
+                </Card>
+              </Grid>
+
+              <Grid item xs={4}>
+                <Card title="Hours of operations" icon={ContactPageIcon}>
+                  contents
+                </Card>
+              </Grid>
+            </Grid>
+            <Grid container spacing={2}>
+              <Grid item xs={4}>
+                <Card title="Social Media & Links" icon={ContactPageIcon}>
+                  contents
+                </Card>
+              </Grid>
+              <Grid item xs={4}>
+                <Card title="Statement" icon={ContactPageIcon}>
+                  contents
+                </Card>
+              </Grid>
+            </Grid>
+          </Grid>
+        </Box>
       </TabPanel>
       <TabPanel value={value} index={1}>
         Item Two

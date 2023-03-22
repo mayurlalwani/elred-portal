@@ -22,5 +22,12 @@ export const sxStyles = () => {
     tabSection: {
       marginTop: "5%",
     },
+    verifyText: {
+      fontSize: "14px",
+      color: "#4793F3",
+      textDecoration: "underline",
+      cursor: "pointer",
+      mt: 2,
+    },
   };
 };
