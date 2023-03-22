@@ -42,6 +42,8 @@ function a11yProps(index: number) {
 
 export default function CustomTabs() {
   const [value, setValue] = React.useState(0);
+  const [contactList, setContactList] = React.useState([]);
+
   const tabArray = [
     "Info",
     "FAQ",
@@ -71,7 +73,7 @@ export default function CustomTabs() {
         </Tabs>
       </Box>
       <TabPanel value={value} index={0}>
-        <Box sx={{ border: "solid" }}>
+        <Box>
           <Grid container rowGap={2}>
             <Grid container spacing={2} rowGap={2}>
               <Grid item xs={4}>
@@ -86,13 +88,16 @@ export default function CustomTabs() {
 
               <Grid item xs={4}>
                 <Card title="Address" icon={ContactPageIcon}>
-                  contents
+                  <Typography>C-1/351/4, GIDC Makarpura,</Typography>
+                  <Typography>Vadodara - 390010,Gujarat, India</Typography>
                 </Card>
               </Grid>
 
               <Grid item xs={4}>
                 <Card title="Hours of operations" icon={ContactPageIcon}>
-                  contents
+                  <Typography>
+                    Monday to Friday - 09:00 Am To 06:00 Pm
+                  </Typography>
                 </Card>
               </Grid>
             </Grid>
@@ -104,7 +109,7 @@ export default function CustomTabs() {
               </Grid>
               <Grid item xs={4}>
                 <Card title="Statement" icon={ContactPageIcon}>
-                  contents
+                  <Typography>You think it, we ink it. </Typography>
                 </Card>
               </Grid>
             </Grid>

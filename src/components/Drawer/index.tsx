@@ -12,6 +12,7 @@ import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import Card from "../Card";
 import PrimaryButton from "../Button";
 import { sxStyles } from "./index.styles";
+import { useState } from "react";
 
 interface ICustomDrawerProps {
   isDrawerOpen: boolean;
@@ -25,6 +26,29 @@ const CustomDrawer = ({
   showContactsInfo,
 }: ICustomDrawerProps) => {
   const styles = sxStyles();
+  const [emailFields, setEmailFields] = useState([{}]);
+  const [contactFields, setContactFields] = useState([{}]);
+
+  const handleAddEmail = () => {
+    let values = [...emailFields];
+    values.push([{}]);
+    setEmailFields(values);
+  };
+
+  const handleAddContact = () => {
+    let values = [...contactFields];
+    values.push([{}]);
+    setContactFields(values);
+  };
+
+  const handleChangeEmail = (e: any, index: number) => {
+    const { name, value } = e.target;
+    const list = [...emailFields];
+    list[index] = value;
+    setEmailFields(list);
+  };
+
+  const handleSaveContact = () => {};
 
   return (
     <Drawer
@@ -84,13 +108,19 @@ const CustomDrawer = ({
           <Box id="edit-contact" sx={{ flexGrow: 1 }}>
             <Box sx={styles.editEmail}>
               <Typography fontWeight={600}>Email ID</Typography>
-              <TextField
-                fullWidth
-                label=""
-                id="fullWidth"
-                placeholder="eg. salesteam@br.in"
-              />
-              <Box sx={styles.addMoreButton}>
+              {emailFields.map((email, index) => (
+                <TextField
+                  fullWidth
+                  label=""
+                  id="fullWidth"
+                  placeholder="eg. salesteam@br.in"
+                  sx={{ mt: 2 }}
+                  onChange={(e) => handleChangeEmail(e, index)}
+                  value={email}
+                />
+              ))}
+
+              <Box sx={styles.addMoreButton} onClick={handleAddEmail}>
                 <AddCircleOutlineIcon sx={{ color: "#E72D38" }} />
                 <Typography color="#E72D38" ml={1} fontWeight={600}>
                   Add More
@@ -100,13 +130,17 @@ const CustomDrawer = ({
 
             <Box mt={3}>
               <Typography fontWeight={600}>Contact Number</Typography>
-              <TextField
-                fullWidth
-                label=""
-                id="fullWidth"
-                placeholder="eg. 8519701740"
-              />
-              <Box sx={styles.addMoreButton}>
+              {contactFields.map((field) => (
+                <TextField
+                  fullWidth
+                  label=""
+                  id="fullWidth"
+                  placeholder="eg. 8519701740"
+                  sx={{ mt: 2 }}
+                />
+              ))}
+
+              <Box sx={styles.addMoreButton} onClick={handleAddContact}>
                 <AddCircleOutlineIcon sx={{ color: "#E72D38" }} />
                 <Typography color="#E72D38" ml={1} fontWeight={600}>
                   Add More
@@ -123,7 +157,7 @@ const CustomDrawer = ({
             width="100%"
             height="50px"
             borderRadius="10px"
-            onClick={() => {}}
+            onClick={handleSaveContact}
           />
         </Box>
       </Box>

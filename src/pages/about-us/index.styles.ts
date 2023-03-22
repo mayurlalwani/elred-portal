@@ -9,6 +9,8 @@ export const sxStyles = () => {
       backgroundColor: "#ffffff",
       borderRadius: "15px",
       padding: "30px 20px 10px 20px",
+      display: "flex",
+      flexDirection: "column",
     },
     companyDetails: {
       display: "flex",

@@ -33,6 +33,7 @@ const PrimaryButton = (props: IButtonProps) => {
       variant="contained"
       startIcon={props?.startIcon}
       sx={styles.buttonStyle}
+      onClick={props.onClick}
     >
       {props.title}
     </Button>

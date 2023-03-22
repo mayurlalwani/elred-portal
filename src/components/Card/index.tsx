@@ -22,9 +22,11 @@ const Card = ({ title, icon, children, showContactsInfo }: ICardProps) => {
   return (
     <Box
       sx={{
-        border: "solid",
+        border: "solid 1px rgba(0, 0, 0, 0.12)",
         display: "flex",
         flexDirection: "column",
+        borderRadius: "10px",
+        padding: "20px",
       }}
     >
       <Box
@@ -42,7 +44,7 @@ const Card = ({ title, icon, children, showContactsInfo }: ICardProps) => {
           onClick={toggleDrawer("right", true)}
         />
       </Box>
-      <Box>{children}</Box>
+      <Box sx={{ mt: 2 }}>{children}</Box>
       <CustomDrawer
         showContactsInfo={showContactsInfo}
         isDrawerOpen={isDrawerOpen}

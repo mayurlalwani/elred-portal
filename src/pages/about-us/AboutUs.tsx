@@ -18,8 +18,8 @@ const AboutUs = () => {
     <Layout>
       <Box id="main-container" sx={styles.mainContainer}>
         <Box sx={styles.aboutContents} id="about-contents">
-          <Box id="title">
-            <h3>About Us</h3>
+          <Box id="title" ml={5}>
+            <h2>About Us</h2>
           </Box>
           <Box id="company-details" sx={styles.companyDetails}>
             <Box sx={{ display: "flex", alignItems: "center" }}>
@@ -44,7 +44,7 @@ const AboutUs = () => {
                     id="outlined-controlled"
                     label="Description"
                     value={companyDescription}
-                    onChange={(event: React.ChangeEvent<HTMLInputElement>) => {
+                    onChange={(event) => {
                       setCompanyDescription(event.target.value);
                     }}
                     sx={{ width: "100%" }}
