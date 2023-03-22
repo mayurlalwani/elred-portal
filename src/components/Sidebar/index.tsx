@@ -1,30 +1,27 @@
+import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import DashboardIcon from "@mui/icons-material/Dashboard";
 import EmojiEventsIcon from "@mui/icons-material/EmojiEvents";
+import HandshakeIcon from "@mui/icons-material/Handshake";
+import InfoIcon from "@mui/icons-material/Info";
+import InventoryIcon from "@mui/icons-material/Inventory";
+import PaymentsIcon from "@mui/icons-material/Payments";
 import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import PriorityHighIcon from "@mui/icons-material/PriorityHigh";
-import PaymentsIcon from "@mui/icons-material/Payments";
-import InfoIcon from "@mui/icons-material/Info";
-import HandshakeIcon from "@mui/icons-material/Handshake";
-import InventoryIcon from "@mui/icons-material/Inventory";
-import ContactSupportIcon from "@mui/icons-material/ContactSupport";
 import {
   Box,
-  Button,
   ListItemIcon,
   MenuItem,
   MenuList,
   Typography,
 } from "@mui/material";
 import { createElement } from "react";
-import LogoImg from "../../assets/logo.png";
-import PaymentImg from "../../assets/payment.png";
-import { sxStyles } from "./index.styles";
 import { NavLink, useLocation } from "react-router-dom";
+import { Logo } from "../Logo";
+import { sxStyles } from "./index.styles";
 
 const Sidebar = () => {
   const styles = sxStyles();
   const location = useLocation();
-  console.log(location.pathname);
   const menuItems = [
     {
       name: "Dashboard",
@@ -63,19 +60,7 @@ const Sidebar = () => {
   return (
     <Box id="sidebar-main-container" sx={styles.sidebarMainContainer}>
       <Box id="sidebar-contents" sx={styles.sidebarContents}>
-        <Box id="logo-section" sx={styles.logoSection}>
-          <Box id="logo" sx={styles.logo}>
-            <img
-              src={LogoImg}
-              width="40px"
-              height="40px"
-              style={{ borderRadius: "50%" }}
-            />
-          </Box>
-          <Typography fontWeight={600} marginTop={2} fontSize="12px">
-            A.T Inks
-          </Typography>
-        </Box>
+        <Logo />
 
         <Box id="menu-section" sx={{ ml: 2 }}>
           <MenuList>
@@ -125,7 +110,7 @@ const Sidebar = () => {
           </MenuList>
         </Box>
 
-        <Box id="help-section" sx={styles.helpSection}>
+        <Box id="help-section">
           <Box sx={styles.helpContents} id="help-content">
             <ContactSupportIcon />
             <Typography fontWeight={600}>Need help?</Typography>
