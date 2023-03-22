@@ -6,7 +6,10 @@ import Box from "@mui/material/Box";
 import Card from "../Card";
 import ContactPageIcon from "@mui/icons-material/ContactPage";
 import { Grid } from "@mui/material";
-
+import RoomIcon from "@mui/icons-material/Room";
+import PunchClockIcon from "@mui/icons-material/PunchClock";
+import LinkIcon from "@mui/icons-material/Link";
+import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 interface TabPanelProps {
   children?: React.ReactNode;
   index: number;
@@ -87,14 +90,14 @@ export default function CustomTabs() {
               </Grid>
 
               <Grid item xs={4}>
-                <Card title="Address" icon={ContactPageIcon}>
+                <Card title="Address" icon={RoomIcon}>
                   <Typography>C-1/351/4, GIDC Makarpura,</Typography>
                   <Typography>Vadodara - 390010,Gujarat, India</Typography>
                 </Card>
               </Grid>
 
               <Grid item xs={4}>
-                <Card title="Hours of operations" icon={ContactPageIcon}>
+                <Card title="Hours of operations" icon={PunchClockIcon}>
                   <Typography>
                     Monday to Friday - 09:00 Am To 06:00 Pm
                   </Typography>
@@ -103,12 +106,12 @@ export default function CustomTabs() {
             </Grid>
             <Grid container spacing={2}>
               <Grid item xs={4}>
-                <Card title="Social Media & Links" icon={ContactPageIcon}>
+                <Card title="Social Media & Links" icon={LinkIcon}>
                   contents
                 </Card>
               </Grid>
               <Grid item xs={4}>
-                <Card title="Statement" icon={ContactPageIcon}>
+                <Card title="Statement" icon={FormatQuoteIcon}>
                   <Typography>You think it, we ink it. </Typography>
                 </Card>
               </Grid>
