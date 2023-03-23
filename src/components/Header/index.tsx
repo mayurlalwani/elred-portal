@@ -13,12 +13,13 @@ import { Link } from "react-router-dom";
 import LogoImg from "../../assets/logo.png";
 import PrimaryButton from "../Button";
 import Search from "../Search";
-import "./index.scss";
 import DownIcon from "../../assets/angle-down-solid.svg";
+import { sxStyles } from "./index.styles";
 
 const Header = () => {
   const [anchorEl, setAnchorEl] = React.useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
+  const styles = sxStyles();
 
   const handleClick = (event: React.MouseEvent<HTMLElement>) => {
     setAnchorEl(event.currentTarget);
@@ -28,9 +29,9 @@ const Header = () => {
     setAnchorEl(null);
   };
   return (
-    <header className="header-container">
-      <div className="header-contents">
-        <div className="logo-search">
+    <Box className="header-container" sx={styles.headerContainer}>
+      <Box className="header-contents" sx={styles.headerContents}>
+        <Box className="logo-search" sx={styles.logoSearch}>
           <div className="logo">
             <Link to="/">
               <img src={LogoImg} width="50px" height="50px" alt="logo" />
@@ -40,8 +41,8 @@ const Header = () => {
           <div className="search">
             <Search placeholder="Search..." direction="row" />
           </div>
-        </div>
-        <div className="right-section">
+        </Box>
+        <Box className="right-section" sx={styles.rightSection}>
           <PrimaryButton
             startIcon={<ShoppingCartOutlinedIcon />}
             title="Checkout(200)"
@@ -51,7 +52,8 @@ const Header = () => {
 
           <Box
             className="avatar-profile"
-            sx={{ ml: 2, mr: 2, backgroundColor: "white", cursor: "pointer" }}
+            sx={styles.avatarProfile}
+            // sx={{ ml: 2, mr: 2, backgroundColor: "white", cursor: "pointer" }}
           >
             <Avatar sx={{ width: 32, height: 32 }}>M</Avatar>
 
@@ -66,7 +68,7 @@ const Header = () => {
             </Typography>
             <img height="10px" width="10px" src={DownIcon} />
           </Box>
-        </div>
+        </Box>
 
         <Menu
           anchorEl={anchorEl}
@@ -111,8 +113,8 @@ const Header = () => {
           </MenuItem>
           <Divider />
         </Menu>
-      </div>
-    </header>
+      </Box>
+    </Box>
   );
 };
 
