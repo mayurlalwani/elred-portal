@@ -2,42 +2,58 @@ import { Box } from "@mui/material";
 import React, { createElement, useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import CustomDrawer from "../Drawer";
-const Card = ({
-  title,
-  icon,
-  children,
-  showContactsInfo
-}) => {
+import { sxStyles } from "./index.styles";
+import DeleteIcon from "@mui/icons-material/Delete";
+import { useAppState } from "../../store";
+
+const Card = ({ title, icon, children, showContactsInfo, showDeleteIcon }) => {
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
-  const toggleDrawer = (anchor, open) => event => {
+  const [state, dispatch] = useAppState();
+
+  const toggleDrawer = (anchor, open) => (event) => {
     setIsDrawerOpen(!isDrawerOpen);
   };
-  return <Box id="card-main-container" sx={{
-    border: "solid 1px rgba(0, 0, 0, 0.12)",
-    display: "flex",
-    flexDirection: "column",
-    borderRadius: "10px",
-    padding: "20px",
-    height: "100%"
-  }}>
-      <Box sx={{
-      display: "flex",
-      justifyContent: "space-between"
-    }}>
-        <Box sx={{
-        display: "flex"
-      }}>
+
+  const handleDeleteContact = () => {
+    dispatch({
+      type: "changeState",
+      data: {
+        emails: [],
+        contacts: [],
+      },
+    });
+  };
+  const styles = sxStyles();
+
+  return (
+    <Box id="card-main-container" sx={styles.cardMainContainer}>
+      <Box sx={styles.cardContents}>
+        <Box sx={{ display: "flex" }}>
           {createElement(icon)}
           <h4>{title}</h4>
         </Box>
-        <EditIcon sx={{
-        color: "#E72D38"
-      }} onClick={toggleDrawer("right", true)} />
+        <Box>
+          {showDeleteIcon && (
+            <DeleteIcon
+              sx={{ color: "#E72D38", cursor: "pointer" }}
+              onClick={handleDeleteContact}
+            />
+          )}
+          <EditIcon
+            sx={{ color: "#E72D38", cursor: "pointer" }}
+            onClick={toggleDrawer("right", true)}
+          />
+        </Box>
       </Box>
-      <Box sx={{
-      mt: 2
-    }}>{children}</Box>
-      <CustomDrawer showContactsInfo={showContactsInfo} isDrawerOpen={isDrawerOpen} toggleDrawer={toggleDrawer} />
-    </Box>;
+      <Box mt={2} display="flex">
+        {children}
+      </Box>
+      <CustomDrawer
+        showContactsInfo={showContactsInfo}
+        isDrawerOpen={isDrawerOpen}
+        toggleDrawer={toggleDrawer}
+      />
+    </Box>
+  );
 };
 export default Card;
