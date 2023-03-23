@@ -68,7 +68,7 @@ const Sidebar = () => {
             flex: 1,
           }}
         >
-          <MenuList>
+          <MenuList sx={{ height: "50%" }}>
             {menuItems.map((item, index) => (
               <NavLink
                 to={`/about-us`}
