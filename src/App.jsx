@@ -2,16 +2,12 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import Main from "./pages";
 import AboutUs from "./pages/about-us/AboutUs";
-
 function App() {
-  return (
-    <BrowserRouter>
+  return <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/about-us" element={<AboutUs />} />
       </Routes>
-    </BrowserRouter>
-  );
+    </BrowserRouter>;
 }
-
 export default App;

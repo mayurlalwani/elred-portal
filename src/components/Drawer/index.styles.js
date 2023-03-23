@@ -5,13 +5,13 @@ export const sxStyles = () => {
       height: "100%",
       padding: "30px",
       display: "flex",
-      flexDirection: "column",
+      flexDirection: "column"
     },
     contactListInfo: {
       mt: 10,
       display: "flex",
       flexDirection: "column",
-      flexGrow: 1,
+      flexGrow: 1
     },
     addMoreButton: {
       mt: 3,
@@ -20,16 +20,16 @@ export const sxStyles = () => {
       alignItems: "center",
       justifyContent: "center",
       backgroundColor: "#FFF2F2",
-      cursor: "pointer",
+      cursor: "pointer"
     },
     saveButton: {
       display: "flex",
       alignItems: "center",
-      justifyContent: "center",
+      justifyContent: "center"
     },
     editEmail: {
       maxWidth: "100%",
-      mt: 10,
-    },
+      mt: 10
+    }
   };
 };

@@ -1,10 +1,10 @@
-export const sxStyles = (props: any) => {
+export const sxStyles = props => {
   return {
     buttonStyle: {
       backgroundColor: props.backgroundColor ? props.backgroundColor : "black",
       color: props.color ? props.color : "#fff",
       width: props.width && props.width,
-      height: (props.height && props.height) || 40,
+      height: props.height && props.height || 40,
       borderRadius: props.borderRadius ? props.borderRadius : "5px",
       fontSize: 14,
       display: "inline-flex",
@@ -17,9 +17,9 @@ export const sxStyles = (props: any) => {
         textDecoration: "none",
         fontWeight: 700,
         transform: "translateY(-0.1em)",
-        color: "#2d1956",
-      },
-    },
+        color: "#2d1956"
+      }
+    }
     // secondaryButton: {
     //   background: (props.backgroundColor && props.backgroundColor) || "#EDE7FA",
     //   color: (props.color && props.color) || "#1E0191",

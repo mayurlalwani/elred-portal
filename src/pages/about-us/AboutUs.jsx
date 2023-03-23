@@ -6,55 +6,46 @@ import { Logo } from "../../components/Logo";
 import Layout from "../Layout";
 import { sxStyles } from "./index.styles";
 import SaveIcon from "@mui/icons-material/Save";
-
 const AboutUs = () => {
   const styles = sxStyles();
-  const description =
-    "Lorem Ipsum dolor sit amet, cosectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.";
+  const description = "Lorem Ipsum dolor sit amet, cosectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.";
   const [companyDescription, setCompanyDescription] = useState(description);
   const [showTextField, setShowTextField] = useState(false);
-
-  return (
-    <Layout>
+  return <Layout>
       <Box id="main-container" sx={styles.mainContainer}>
         <Box sx={styles.aboutContents} id="about-contents">
           <Box id="title" ml={5}>
             <h2>About Us</h2>
           </Box>
           <Box id="company-details" sx={styles.companyDetails}>
-            <Box sx={{ display: "flex", alignItems: "center" }}>
+            <Box sx={{
+            display: "flex",
+            alignItems: "center"
+          }}>
               <Logo />
               <Typography sx={styles.verifyText}>Verify Company</Typography>
             </Box>
             <Box id="description" sx={styles.description}>
               <Typography ml={3} color="#666666">
-                {!showTextField && (
-                  <>
+                {!showTextField && <>
                     {companyDescription}
-                    <EditIcon
-                      sx={{ color: "#E72D38", cursor: "pointer" }}
-                      onClick={() => setShowTextField(!showTextField)}
-                    />
-                  </>
-                )}
+                    <EditIcon sx={{
+                  color: "#E72D38",
+                  cursor: "pointer"
+                }} onClick={() => setShowTextField(!showTextField)} />
+                  </>}
               </Typography>
-              {showTextField && (
-                <>
-                  <TextField
-                    id="outlined-controlled"
-                    label="Description"
-                    value={companyDescription}
-                    onChange={(event) => {
-                      setCompanyDescription(event.target.value);
-                    }}
-                    sx={{ width: "100%" }}
-                  />
-                  <SaveIcon
-                    sx={{ color: "#E72D38", cursor: "pointer" }}
-                    onClick={() => setShowTextField(!showTextField)}
-                  />
-                </>
-              )}
+              {showTextField && <>
+                  <TextField id="outlined-controlled" label="Description" value={companyDescription} onChange={event => {
+                setCompanyDescription(event.target.value);
+              }} sx={{
+                width: "100%"
+              }} />
+                  <SaveIcon sx={{
+                color: "#E72D38",
+                cursor: "pointer"
+              }} onClick={() => setShowTextField(!showTextField)} />
+                </>}
             </Box>
           </Box>
 
@@ -63,8 +54,6 @@ const AboutUs = () => {
           </Box>
         </Box>
       </Box>
-    </Layout>
-  );
+    </Layout>;
 };
-
 export default AboutUs;
