@@ -12,6 +12,10 @@ import LinkIcon from "@mui/icons-material/Link";
 import FormatQuoteIcon from "@mui/icons-material/FormatQuote";
 import { sxStyles } from "./index.styles";
 import { useAppState } from "../../store";
+import LanguageIcon from "@mui/icons-material/Language";
+import InstagramIcon from "@mui/icons-material/Instagram";
+import FacebookIcon from "@mui/icons-material/Facebook";
+import TwitterIcon from "@mui/icons-material/Twitter";
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
@@ -159,7 +163,24 @@ export default function CustomTabs() {
             <Grid container spacing={2}>
               <Grid item xs={4}>
                 <Card title="Social Media & Links" icon={LinkIcon}>
-                  contents
+                  <Box sx={styles.socialMediaContainer}>
+                    <Box sx={styles.icons}>
+                      <LanguageIcon sx={{ color: "#666666" }} />
+                      <Typography fontSize="12px">Website</Typography>
+                    </Box>
+                    <Box sx={styles.icons}>
+                      <InstagramIcon sx={{ color: "#666666" }} />
+                      <Typography fontSize="12px">Instagram</Typography>
+                    </Box>
+                    <Box sx={styles.icons}>
+                      <FacebookIcon sx={{ color: "#666666" }} />
+                      <Typography fontSize="12px">Facebook</Typography>
+                    </Box>
+                    <Box sx={styles.icons}>
+                      <TwitterIcon sx={{ color: "#666666" }} />
+                      <Typography fontSize="12px">Twitter</Typography>
+                    </Box>
+                  </Box>
                 </Card>
               </Grid>
               <Grid item xs={4}>

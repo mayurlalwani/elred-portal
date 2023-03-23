@@ -12,7 +12,17 @@ export const sxStyles = () => {
       position: "absolute",
       left: "42%",
       marginTop: 4,
-      // bottom: "5px",
+    },
+    socialMediaContainer: {
+      display: "flex",
+      width: "100%",
+      justifyContent: "space-around",
+      alignItems: "center",
+    },
+    icons: {
+      display: "flex",
+      alignItems: "center",
+      flexDirection: "column",
     },
   };
 };

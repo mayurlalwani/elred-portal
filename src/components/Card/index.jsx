@@ -1,4 +1,4 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 import React, { createElement, useState } from "react";
 import EditIcon from "@mui/icons-material/Edit";
 import CustomDrawer from "../Drawer";
@@ -28,9 +28,11 @@ const Card = ({ title, icon, children, showContactsInfo, showDeleteIcon }) => {
   return (
     <Box id="card-main-container" sx={styles.cardMainContainer}>
       <Box sx={styles.cardContents}>
-        <Box sx={{ display: "flex" }}>
+        <Box sx={{ display: "flex", color: "#666666" }}>
           {createElement(icon)}
-          <h4>{title}</h4>
+          <Typography ml={1} color="black" fontWeight="bold">
+            {title}
+          </Typography>
         </Box>
         <Box>
           {showDeleteIcon && (
