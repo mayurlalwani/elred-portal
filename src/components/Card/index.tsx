@@ -21,12 +21,14 @@ const Card = ({ title, icon, children, showContactsInfo }: ICardProps) => {
     };
   return (
     <Box
+      id="card-main-container"
       sx={{
         border: "solid 1px rgba(0, 0, 0, 0.12)",
         display: "flex",
         flexDirection: "column",
         borderRadius: "10px",
         padding: "20px",
+        height: "100%",
       }}
     >
       <Box

@@ -1,7 +1,6 @@
 export const sxStyles = () => {
   return {
     drawerContainer: {
-      border: "solid",
       width: 500,
       height: "100%",
       padding: "30px",

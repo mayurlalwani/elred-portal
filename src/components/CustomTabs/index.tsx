@@ -25,11 +25,18 @@ function TabPanel(props: TabPanelProps) {
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
+      style={{ height: "100%" }}
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3 }}>
-          <Typography>{children}</Typography>
+        <Box
+          id="tab-box"
+          sx={{
+            p: 3,
+            height: "100%",
+          }}
+        >
+          <Typography sx={{ height: "100%" }}>{children}</Typography>
         </Box>
       )}
     </div>
@@ -59,7 +66,7 @@ export default function CustomTabs() {
   };
 
   return (
-    <Box sx={{ width: "100%" }}>
+    <Box sx={{ width: "100%", height: "100%" }}>
       <Box sx={{ borderBottom: 1, borderColor: "divider" }}>
         <Tabs
           value={value}
@@ -75,9 +82,9 @@ export default function CustomTabs() {
           ))}
         </Tabs>
       </Box>
-      <TabPanel value={value} index={0}>
-        <Box>
-          <Grid container rowGap={2}>
+      <Box sx={{ height: "90%" }}>
+        <TabPanel value={value} index={0}>
+          <Grid container rowGap={2} sx={{ height: "100%" }}>
             <Grid container spacing={2} rowGap={2}>
               <Grid item xs={4}>
                 <Card
@@ -117,8 +124,8 @@ export default function CustomTabs() {
               </Grid>
             </Grid>
           </Grid>
-        </Box>
-      </TabPanel>
+        </TabPanel>
+      </Box>
       <TabPanel value={value} index={1}>
         Item Two
       </TabPanel>

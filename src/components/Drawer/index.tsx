@@ -42,7 +42,7 @@ const CustomDrawer = ({
   };
 
   const handleChangeEmail = (e: any, index: number) => {
-    const { name, value } = e.target;
+    const { value } = e.target;
     const list = [...emailFields];
     list[index] = value;
     setEmailFields(list);
@@ -108,7 +108,7 @@ const CustomDrawer = ({
           <Box id="edit-contact" sx={{ flexGrow: 1 }}>
             <Box sx={styles.editEmail}>
               <Typography fontWeight={600}>Email ID</Typography>
-              {emailFields.map((email, index) => (
+              {emailFields.map((email: any, index: number) => (
                 <TextField
                   fullWidth
                   label=""

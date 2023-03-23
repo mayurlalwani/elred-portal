@@ -16,6 +16,7 @@ import {
 } from "@mui/material";
 import { createElement } from "react";
 import { NavLink, useLocation } from "react-router-dom";
+import PrimaryButton from "../Button";
 import { Logo } from "../Logo";
 import { sxStyles } from "./index.styles";
 
@@ -62,7 +63,7 @@ const Sidebar = () => {
       <Box id="sidebar-contents" sx={styles.sidebarContents}>
         <Logo />
 
-        <Box id="menu-section" sx={{ ml: 2 }}>
+        <Box id="menu-section" sx={{ ml: 2, flex: 1 }}>
           <MenuList>
             {menuItems.map((item, index) => (
               <NavLink
@@ -86,7 +87,7 @@ const Sidebar = () => {
               >
                 <MenuItem
                   sx={{
-                    height: "60px",
+                    height: "20%",
                     color:
                       location.pathname === "/about-us" &&
                       item.name === "About Us"
@@ -110,14 +111,21 @@ const Sidebar = () => {
           </MenuList>
         </Box>
 
-        <Box id="help-section">
+        <Box id="help-section" sx={{ display: "inline-flex" }}>
           <Box sx={styles.helpContents} id="help-content">
             <ContactSupportIcon />
             <Typography fontWeight={600}>Need help?</Typography>
-            <Typography textAlign="center">
+            <Typography textAlign="center" fontSize="12px">
               Our support team is at your disposal
             </Typography>
             {/* <ColorButton>Get Help</ColorButton> */}
+            <PrimaryButton
+              height="30px"
+              width="60%"
+              title="Get Help"
+              fontSize="10px"
+              onClick={() => {}}
+            />
           </Box>
         </Box>
       </Box>

@@ -23,6 +23,7 @@ export const sxStyles = () => {
     },
     tabSection: {
       marginTop: "5%",
+      height: "100%",
     },
     verifyText: {
       fontSize: "14px",
